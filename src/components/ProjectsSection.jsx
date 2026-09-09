@@ -44,13 +44,6 @@ function ProjectsSection() {
                   ))}
                 </div>
 
-                <button
-                  type="button"
-                  onClick={() => setSelectedProject(project)}
-                  className="mt-6 inline-flex items-center justify-center rounded-xl border border-cyan-300/35 bg-cyan-400/10 px-4 py-2 text-sm text-cyan-100 transition hover:bg-cyan-300/20"
-                >
-                  View Full Details
-                </button>
               </GlassCard>
             </Motion.div>
           ))}

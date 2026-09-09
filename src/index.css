@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Sora:wght@400;500;600;700&display=swap");
+
 /* Hide scrollbar utility for modals */
 .scrollbar-hide {
   scrollbar-width: none; /* Firefox */
@@ -6,7 +8,6 @@
 .scrollbar-hide::-webkit-scrollbar {
   display: none; /* Chrome/Safari/Webkit */
 }
-@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Sora:wght@400;500;600;700&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -173,7 +174,27 @@ a {
 
 .home-spotlight-b {
   right: -0.75rem;
-  top: 18%;
+  top: 58%;
+}
+
+.home-name-underline {
+  margin-top: 1rem;
+  height: 3px;
+  width: min(200px, 40vw);
+  transform-origin: left;
+  border-radius: 9999px;
+  background: linear-gradient(90deg, rgba(34, 211, 238, 0.95), rgba(232, 121, 249, 0.8), rgba(99, 102, 241, 0.7));
+  box-shadow: 0 0 20px rgba(34, 211, 238, 0.3);
+}
+
+.section-title-underline {
+  margin-top: 0.8rem;
+  height: 3px;
+  width: min(180px, 28vw);
+  transform-origin: left;
+  border-radius: 9999px;
+  background: linear-gradient(90deg, rgba(34, 211, 238, 0.9), rgba(232, 121, 249, 0.75), rgba(99, 102, 241, 0.6));
+  box-shadow: 0 0 18px rgba(34, 211, 238, 0.25);
 }
 
 .home-spotlight-c {
@@ -1230,5 +1251,240 @@ a {
     right: auto;
     top: auto;
     bottom: auto;
+  }
+}
+
+.achievement-mesh {
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(rgba(148, 163, 184, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(148, 163, 184, 0.05) 1px, transparent 1px);
+  background-size: 46px 46px;
+  mask-image: radial-gradient(circle at center, black 30%, transparent 88%);
+  opacity: 0.6;
+  pointer-events: none;
+  animation: drift 28s linear infinite;
+}
+
+.achievement-noise {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.04) 0.7px, transparent 0.7px);
+  background-size: 26px 26px;
+  opacity: 0.2;
+  mix-blend-mode: soft-light;
+  pointer-events: none;
+}
+
+.achievement-blob-a {
+  left: -3rem;
+  top: -2rem;
+  height: 16rem;
+  width: 16rem;
+  background: rgba(34, 211, 238, 0.18);
+}
+
+.achievement-blob-b {
+  right: -4rem;
+  bottom: -3rem;
+  height: 18rem;
+  width: 18rem;
+  background: rgba(99, 102, 241, 0.18);
+}
+
+.achievement-underline {
+  margin-top: 1.4rem;
+  height: 3px;
+  width: min(240px, 46vw);
+  transform-origin: left;
+  border-radius: 9999px;
+  background: linear-gradient(90deg, rgba(34, 211, 238, 0.95), rgba(232, 121, 249, 0.8), rgba(99, 102, 241, 0.7));
+  box-shadow: 0 0 22px rgba(34, 211, 238, 0.35);
+}
+
+.achievement-stat-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: linear-gradient(145deg, rgba(12, 18, 32, 0.9), rgba(8, 12, 24, 0.92));
+  padding: 1.2rem 1.3rem;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05), 0 18px 40px rgba(0, 0, 0, 0.24);
+}
+
+.achievement-stat-label {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.24em;
+  color: rgba(148, 163, 184, 0.8);
+}
+
+.achievement-stat-value {
+  margin-top: 0.5rem;
+  display: flex;
+  align-items: baseline;
+  gap: 0.35rem;
+  font-family: "Sora", sans-serif;
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #f8fafc;
+}
+
+.achievement-stat-suffix {
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: rgba(56, 189, 248, 0.8);
+}
+
+.achievement-stat-detail {
+  margin-top: 0.4rem;
+  font-size: 0.85rem;
+  color: rgba(148, 163, 184, 0.9);
+}
+
+.achievement-card {
+  position: relative;
+  display: flex;
+  min-height: auto;
+  flex-direction: column;
+  gap: 0.75rem;
+  overflow: hidden;
+  border-radius: 1.75rem;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: linear-gradient(155deg, rgba(12, 18, 32, 0.92), rgba(8, 12, 24, 0.95));
+  padding: 1.6rem;
+  box-shadow: 0 26px 70px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease, background 0.3s ease;
+  backdrop-filter: blur(22px);
+}
+
+.achievement-card:hover {
+  border-color: rgba(56, 189, 248, 0.35);
+  background: linear-gradient(155deg, rgba(13, 20, 36, 0.96), rgba(9, 14, 28, 0.98));
+  box-shadow: 0 34px 90px rgba(0, 0, 0, 0.34), 0 0 40px rgba(34, 211, 238, 0.12);
+}
+
+.achievement-featured {
+  border-color: rgba(255, 255, 255, 0.14);
+  box-shadow: 0 34px 90px rgba(0, 0, 0, 0.34), 0 0 45px rgba(34, 211, 238, 0.16);
+}
+
+.achievement-card-border {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(135deg, rgba(34, 211, 238, 0.4), rgba(232, 121, 249, 0.2), rgba(99, 102, 241, 0.25));
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: xor;
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  opacity: 0.65;
+  pointer-events: none;
+}
+
+.achievement-card-glow {
+  position: absolute;
+  inset: 0;
+  opacity: 0.9;
+  pointer-events: none;
+}
+
+.achievement-card-sheen {
+  position: absolute;
+  top: -20%;
+  bottom: -20%;
+  left: -35%;
+  width: 38%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.18), transparent);
+  transform: skewX(-18deg);
+  filter: blur(8px);
+  opacity: 0.35;
+  animation: achievementSheen 10s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.achievement-icon {
+  display: inline-flex;
+  height: 3.2rem;
+  width: 3.2rem;
+  align-items: center;
+  justify-content: center;
+  border-radius: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: linear-gradient(135deg, rgba(34, 211, 238, 0.2), rgba(232, 121, 249, 0.16));
+  color: #e0f2fe;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.07), 0 14px 28px rgba(0, 0, 0, 0.22);
+}
+
+.achievement-chip {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 9999px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.05);
+  padding: 0.35rem 0.85rem;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: rgba(125, 211, 252, 0.9);
+}
+
+.achievement-year,
+.achievement-impact {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 9999px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(255, 255, 255, 0.04);
+  padding: 0.35rem 0.75rem;
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  color: rgba(226, 232, 240, 0.9);
+}
+
+.achievement-impact {
+  border-color: rgba(56, 189, 248, 0.3);
+  color: #7dd3fc;
+}
+
+.achievement-meta {
+  border-radius: 9999px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.03);
+  padding: 0.3rem 0.7rem;
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(148, 163, 184, 0.85);
+}
+
+.achievement-ribbon {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 9999px;
+  border: 1px solid rgba(34, 211, 238, 0.4);
+  background: rgba(8, 12, 24, 0.6);
+  padding: 0.35rem 0.85rem;
+  font-size: 0.68rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #67e8f9;
+  box-shadow: 0 0 18px rgba(34, 211, 238, 0.2);
+}
+
+@keyframes achievementSheen {
+  0% {
+    transform: translateX(0) skewX(-18deg);
+    opacity: 0.2;
+  }
+  50% {
+    transform: translateX(220%) skewX(-18deg);
+    opacity: 0.45;
+  }
+  100% {
+    transform: translateX(0) skewX(-18deg);
+    opacity: 0.2;
   }
 }

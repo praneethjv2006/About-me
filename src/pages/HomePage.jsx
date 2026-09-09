@@ -6,7 +6,7 @@ import PageTransition from "../components/PageTransition"
 import GlassCard from "../components/ui/GlassCard"
 
 import homePageImg from "../assets/images/home_page.jpg"
-import { heroData } from "../data/portfolioData"
+import { aboutData, heroData } from "../data/portfolioData"
 
 const spotlightCards = [
   {
@@ -17,7 +17,7 @@ const spotlightCards = [
   },
   {
     label: "Academic Base",
-    value: "IIT Ropar | 8.85 CGPA",
+    value: "IIT Ropar | 9.00 CGPA",
     accent: "from-fuchsia-400/30 to-transparent",
     position: "home-spotlight-b",
   },
@@ -48,13 +48,30 @@ function HomePage() {
             </Motion.p>
 
             <Motion.h1
-              initial={{ opacity: 0, y: 18 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.65, delay: 0.08 }}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.8, delay: 0.08, ease: "easeOut" }}
               className="mt-4 text-4xl font-semibold leading-tight text-white sm:text-5xl lg:text-6xl"
             >
-              {heroData.name}
+              {heroData.name.split("").map((char, index) => (
+                <Motion.span
+                  key={index}
+                  initial={{ opacity: 0, y: 18 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.08 + index * 0.04, ease: "easeOut" }}
+                  style={{ display: char === " " ? "inline" : "inline-block" }}
+                >
+                  {char}
+                </Motion.span>
+              ))}
             </Motion.h1>
+
+            <Motion.div
+              initial={{ scaleX: 0 }}
+              animate={{ scaleX: 1 }}
+              transition={{ duration: 0.7, delay: 0.35, ease: "easeOut" }}
+              className="home-name-underline"
+            />
 
             <Motion.p
               initial={{ opacity: 0, y: 18 }}
@@ -138,7 +155,25 @@ function HomePage() {
         </div>
       </div>
 
-      {/* Who I Am card removed as requested */}
+      <Motion.div
+        initial={{ opacity: 0, y: 24 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 0.3 }}
+        className="mt-8 rounded-[2rem] border border-white/10 bg-white/[0.03] p-6 md:p-8 shadow-[0_30px_80px_rgba(0,0,0,0.45)] backdrop-blur-xl"
+      >
+        <p className="text-xs uppercase tracking-[0.25em] text-cyan-300">Key Highlights</p>
+        <div className="mt-5 grid gap-3.5 sm:grid-cols-2">
+          {aboutData.highlights.map((highlight, idx) => (
+            <div
+              key={idx}
+              className="flex items-center gap-3.5 rounded-2xl border border-white/10 bg-slate-950/40 p-4 text-sm font-medium text-slate-200 transition-colors hover:border-cyan-400/30 hover:bg-white/[0.06]"
+            >
+              <span className="h-2.5 w-2.5 shrink-0 rounded-full bg-cyan-400 shadow-[0_0_12px_rgba(34,211,238,0.85)]" />
+              <span>{highlight}</span>
+            </div>
+          ))}
+        </div>
+      </Motion.div>
 
       <ContactShowcase />
     </PageTransition>

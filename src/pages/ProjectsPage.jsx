@@ -81,8 +81,8 @@ function ProjectShowcaseCard({ project, index, onOpen }) {
             </div>
           </div>
 
-          <div className="mt-8 grid gap-4 lg:grid-cols-2">
-            {project.bullets.slice(0, 2).map((point) => (
+          <div className="mt-8 grid gap-4 grid-cols-1">
+            {project.bullets.map((point) => (
               <div key={point} className="project-highlight-card">
                 <span className="project-highlight-dot" />
                 <p className="text-sm leading-7 text-slate-300">{point}</p>
@@ -105,16 +105,11 @@ function ProjectShowcaseCard({ project, index, onOpen }) {
             ))}
           </div>
 
-          <div className="mt-8 flex flex-wrap items-center gap-3 border-t border-white/10 pt-5">
+          <div className="mt-8 flex items-center justify-end gap-3 border-t border-white/10 pt-5">
             <a href={project.source} target="_blank" rel="noreferrer" className="project-button-secondary">
               GitHub
               <Github size={16} />
             </a>
-
-            <button type="button" onClick={() => onOpen(project)} className="project-button-primary">
-              View Details
-              <ArrowRight size={16} />
-            </button>
           </div>
         </div>
       </InteractiveProjectSurface>
@@ -304,7 +299,11 @@ function ProjectsPage() {
         <div className="pointer-events-none absolute bottom-[-16%] right-[-10%] h-72 w-72 rounded-full bg-fuchsia-400/[0.08] blur-3xl" />
 
         <section className="relative z-10">
-          <p className="mb-10 text-sm uppercase tracking-[0.28em] text-cyan-300/80">Projects</p>
+          <SectionTitle
+            eyebrow="Projects"
+            title="Projects & Case Studies"
+            description="A curated set of builds, hackathon entries, and engineering case studies."
+          />
           <div className="space-y-8">
             {projects.map((project, index) => (
               <ProjectShowcaseCard

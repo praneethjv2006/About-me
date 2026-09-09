@@ -68,6 +68,12 @@ const techIconMap = {
 }
 
 const accentClasses = {
+  indigo: {
+    text: "text-indigo-200",
+    chip: "border-indigo-300/20 bg-indigo-400/10 text-indigo-50",
+    dot: "bg-indigo-300",
+    glow: "bg-indigo-400/14",
+  },
   cyan: {
     text: "text-cyan-200",
     chip: "border-cyan-300/20 bg-cyan-400/10 text-cyan-50",
@@ -83,9 +89,9 @@ const accentClasses = {
 }
 
 const heroMetrics = [
-  { label: "Internships", value: "02" },
+  { label: "Internships", value: "03" },
   { label: "Focus", value: "AI + Product" },
-  { label: "Timeline", value: "2025" },
+  { label: "Timeline", value: "2025 - 2026" },
 ]
 
 function SurfaceSpotlight({ children, className = "" }) {
@@ -162,19 +168,12 @@ function ExperienceTimelineItem({ item, index, onOpen }) {
               ))}
             </div>
 
-            <div className="mt-8 grid gap-4 lg:grid-cols-2">
-              {item.achievements.slice(0, 2).map((achievement) => (
+            <div className="mt-8 grid gap-4 grid-cols-1">
+              {item.achievements.map((achievement) => (
                 <div key={achievement} className="rounded-2xl border border-white/10 bg-white/[0.03] p-4">
                   <p className="text-sm leading-7 text-slate-300">{achievement}</p>
                 </div>
               ))}
-            </div>
-
-            <div className="mt-8 flex flex-wrap items-center justify-end gap-4 border-t border-white/10 pt-5">
-              <button type="button" onClick={() => onOpen(item)} className="experience-button">
-                View Full Experience
-                <ArrowRight size={16} />
-              </button>
             </div>
           </div>
         </SurfaceSpotlight>
@@ -403,7 +402,11 @@ function ExperiencePage() {
         <div className="pointer-events-none absolute bottom-[-16%] right-[-10%] h-72 w-72 rounded-full bg-fuchsia-400/[0.08] blur-3xl" />
 
         <section className="relative">
-          <div />
+          <SectionTitle
+            eyebrow="Experience"
+            title="Internships, Research & Roles"
+            description="Hands-on engineering, research, and product work across internships and teams."
+          />
         </section>
 
         <section className="relative mt-16">
