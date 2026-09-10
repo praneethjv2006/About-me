@@ -11,7 +11,7 @@ import { aboutData, heroData } from "../data/portfolioData"
 const spotlightCards = [
   {
     label: "Competitive Edge",
-    value: "Codeforces Specialist",
+    value: "Codeforces Expert (1731)",
     accent: "from-cyan-400/30 to-transparent",
     position: "home-spotlight-a",
   },

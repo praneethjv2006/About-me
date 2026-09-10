@@ -13,7 +13,7 @@ export const aboutData = {
     "IIT Ropar B.Tech with 9.00 CGPA (2027)",
     "Project Intern: Multi-Modal Drone & Bird Detection (IEEE VIP Cup 2025)",
     "Intern at Annam.AI (CoE in AI for Agriculture)",
-    "Codeforces Specialist (Max Rating: 1548)",
+    "Codeforces Expert (Max Rating: 1731)",
   ],
   imageUrl:
     "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?auto=format&fit=crop&w=900&q=80",
@@ -609,11 +609,11 @@ export const achievements = [
     icon: "sparkles",
   },
   {
-    title: "Codeforces Expert (1603)",
+    title: "Codeforces Expert (1731)",
     description: "Expert tier in competitive programming with a maximum rating of 1603.",
     year: "2025",
     category: "Competitive Programming",
-    impact: "Max rating 1603",
+    impact: "Max rating 1731",
     meta: ["Codeforces", "Algorithmic contests"],
     featured: true,
     icon: "trophy",
