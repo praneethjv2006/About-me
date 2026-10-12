@@ -34,7 +34,3 @@ npm run build
 npm run preview
 ```
 
-## Notes
-
-- Update placeholder profile/project/social data in `src/data/portfolioData.js`.
-- Replace example links (`#`) with real URLs before deployment.
